@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Compactador de Imagens Pica das Galáxias</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script defer src="/static/script.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>📸 Compactador de Imagens</h1>
+
+    <form id="upload-form">
+        <input type="file" name="files" id="file-input" accept="image/*" multiple required>
+        <p id="file-count">Nenhuma imagem selecionada</p>
+
+        <label for="quality-range">Qualidade da imagem: <span id="quality-value">60</span>%</label>
+        <input type="range" id="quality-range" name="quality" min="10" max="100" value="60">
+
+        <label for="resize-range">Reduzir tamanho para: <span id="resize-value">100</span>%</label>
+        <input type="range" id="resize-range" name="resize" min="10" max="100" value="100">
+
+        <button type="submit">Compactar Imagem(ns)</button>
+    </form>
+
+    <div id="status"></div>
+</div>
+</body>
+</html>
