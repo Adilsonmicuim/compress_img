@@ -3,6 +3,8 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.background import BackgroundTask
+from PIL.Image import DecompressionBombWarning
+import warnings
 
 import os
 import uuid
@@ -21,6 +23,8 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Compactar imagem com controle de qualidade e redução percentual
 def compress_image(input_path, output_path, quality=60, resize_percent=100):
+    warnings.simplefilter('ignore', DecompressionBombWarning)  # oculta só esse aviso
+    Image.MAX_IMAGE_PIXELS = None
     img = Image.open(input_path)
 
     # Reduz proporcionalmente com base no percentual

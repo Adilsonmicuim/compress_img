@@ -11,4 +11,4 @@ compress_img/
 │   └── style.css
 ```
 
-<img src="docs/IMG31032025.jpg">
+![Minha imagem](docs/IMG31032025.jpg)
